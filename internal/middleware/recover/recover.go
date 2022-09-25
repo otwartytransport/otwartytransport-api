@@ -2,12 +2,8 @@ package recover
 
 import (
 	"github.com/gofiber/fiber/v2"
+	"github.com/otwartytransport/otwartytransport-api/internal/errors"
 )
-
-type Error struct {
-	Type    string `json:"type,omitempty"`
-	Message string `json:"message,omitempty"`
-}
 
 func New() fiber.Handler {
 	return func(c *fiber.Ctx) (err error) {
@@ -16,10 +12,7 @@ func New() fiber.Handler {
 				var ok bool
 				if err, ok = r.(error); !ok {
 					c.Status(500)
-					err = c.JSON(Error{
-						Type:    "UnknownError",
-						Message: "Unknown error",
-					})
+					err = c.JSON(errors.Unknown)
 				}
 			}
 		}()
