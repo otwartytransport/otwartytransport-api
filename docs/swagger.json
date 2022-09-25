@@ -1,0 +1,39 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "OtwartyTransport API",
+        "contact": {
+            "email": "contact@otwartytransport.pl"
+        },
+        "version": "0.1"
+    },
+    "basePath": "/",
+    "paths": {
+        "/status": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Return API status",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/status.Response"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "status.Response": {
+            "type": "object",
+            "properties": {
+                "running": {
+                    "type": "boolean"
+                }
+            }
+        }
+    }
+}

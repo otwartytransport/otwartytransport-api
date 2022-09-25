@@ -1,0 +1,24 @@
+basePath: /
+definitions:
+  status.Response:
+    properties:
+      running:
+        type: boolean
+    type: object
+info:
+  contact:
+    email: contact@otwartytransport.pl
+  title: OtwartyTransport API
+  version: "0.1"
+paths:
+  /status:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/status.Response'
+      summary: Return API status
+swagger: "2.0"
