@@ -11,7 +11,8 @@ import (
 
 func NewServer() *fiber.App {
 	app := fiber.New(fiber.Config{
-		Prefork: true,
+		Prefork:      true,
+		ErrorHandler: errorHandler,
 	})
 	app.Use(logger.New())
 	app.Use(compress.New())
