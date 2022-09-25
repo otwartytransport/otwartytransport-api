@@ -7,9 +7,10 @@ import (
 )
 
 func registerRoutes(app *fiber.App) {
-	statusRoutes(app)
+	v1 := app.Group("/v1")
+	statusRoutes(v1)
 }
 
-func statusRoutes(app *fiber.App) {
-	app.Get("/status", status.Status)
+func statusRoutes(router fiber.Router) {
+	router.Get("/status", status.Status)
 }
