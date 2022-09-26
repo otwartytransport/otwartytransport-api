@@ -16,7 +16,7 @@ import (
 // @title         OtwartyTransport API
 // @version       0.1
 // @contact.email contact@otwartytransport.pl
-// @BasePath      /
+// @BasePath      /v1
 func NewServer() *fiber.App {
 	app := fiber.New(fiber.Config{
 		Prefork:      true,

@@ -7,7 +7,7 @@
         },
         "version": "0.1"
     },
-    "basePath": "/",
+    "basePath": "/v1",
     "paths": {
         "/status": {
             "get": {
