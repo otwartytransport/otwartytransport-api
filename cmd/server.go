@@ -11,17 +11,18 @@ import (
 )
 
 type Config struct {
-	AppPort int `env:"APP_PORT,notEmpty,unset"`
+	AppHost string `env:"APP_HOST,notEmpty,unset"`
+	AppPort int    `env:"APP_PORT,notEmpty,unset"`
 }
 
 func loadConfig(environment string) (Config, error) {
-	var cfg Config
 	dotenv := fmt.Sprintf(".env.%s", environment)
 
 	if err := godotenv.Load(dotenv); err != nil {
-		return cfg, err
+		return Config{}, err
 	}
 
+	var cfg Config
 	if err := env.Parse(&cfg); err != nil {
 		return cfg, err
 	}
@@ -36,5 +37,5 @@ func main() {
 	}
 
 	srv := server.NewServer()
-	log.Fatal(srv.Listen(fmt.Sprintf(":%d", cfg.AppPort)))
+	log.Fatal(srv.Listen(fmt.Sprintf("%s:%d", cfg.AppHost, cfg.AppPort)))
 }
