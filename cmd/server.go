@@ -24,7 +24,7 @@ func loadConfig(environment string) (Config, error) {
 
 	var cfg Config
 	if err := env.Parse(&cfg); err != nil {
-		return cfg, err
+		return Config{}, err
 	}
 
 	return cfg, nil
