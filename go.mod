@@ -7,6 +7,7 @@ require (
 	github.com/PuerkitoBio/purell v1.2.0 // indirect
 	github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578 // indirect
 	github.com/andybalholm/brotli v1.0.4 // indirect
+	github.com/caarlos0/env/v6 v6.10.1 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.2 // indirect
 	github.com/ghodss/yaml v1.0.0 // indirect
 	github.com/go-openapi/jsonpointer v0.19.5 // indirect
@@ -15,6 +16,7 @@ require (
 	github.com/go-openapi/swag v0.22.3 // indirect
 	github.com/gofiber/fiber/v2 v2.37.1 // indirect
 	github.com/gofiber/swagger v0.1.2 // indirect
+	github.com/joho/godotenv v1.4.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/klauspost/compress v1.15.10 // indirect
 	github.com/mailru/easyjson v0.7.7 // indirect
