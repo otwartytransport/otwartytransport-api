@@ -1,13 +1,14 @@
 package server
 
 import (
-	"github.com/gofiber/swagger"
-	"github.com/otwartytransport/otwartytransport-api/internal/middleware/recover"
-
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/compress"
 	"github.com/gofiber/fiber/v2/middleware/cors"
+	"github.com/gofiber/fiber/v2/middleware/favicon"
 	"github.com/gofiber/fiber/v2/middleware/logger"
+	"github.com/gofiber/swagger"
+	"github.com/otwartytransport/otwartytransport-api/internal/endpoint/dynamicData"
+	"github.com/otwartytransport/otwartytransport-api/internal/middleware/recover"
 
 	_ "github.com/otwartytransport/otwartytransport-api/docs"
 )
@@ -29,6 +30,10 @@ func NewServer() *fiber.App {
 		AllowOrigins: "*",
 		AllowHeaders: "Origin, Content-Type, Accept",
 	}))
+	app.Use(favicon.New(favicon.Config{
+		File: "./favicon.ico",
+	}))
+	app.Use(dynamicData.LoadQuadtreeToContext)
 
 	app.Get("/swagger/*", swagger.HandlerDefault)
 
