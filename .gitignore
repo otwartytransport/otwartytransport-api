@@ -86,3 +86,6 @@ Temporary Items
 
 # Built app
 build/
+
+# Hot reload
+tmp/
