@@ -1,10 +1,12 @@
-package dynamicData
+package context
 
 import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/paulmach/orb"
 	"github.com/paulmach/orb/quadtree"
 )
+
+var DynamicDataQuadtreeName = "dynamicVehicles"
 
 func GetQuadtree(ctx *fiber.Ctx) *quadtree.Quadtree {
 	qt := ctx.Locals(DynamicDataQuadtreeName)

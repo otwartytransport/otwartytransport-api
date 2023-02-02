@@ -1,10 +1,9 @@
-package dynamicData
+package context
 
 import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/paulmach/orb"
 	"github.com/paulmach/orb/geojson"
-	// "github.com/paulmach/orb/quadtree"
 )
 
 type UploadData struct {

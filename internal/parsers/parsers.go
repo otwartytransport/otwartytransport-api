@@ -1,4 +1,4 @@
-package dynamicData
+package parsers
 
 import (
 	"github.com/gofiber/fiber/v2"

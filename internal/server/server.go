@@ -7,7 +7,7 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/favicon"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/swagger"
-	"github.com/otwartytransport/otwartytransport-api/internal/endpoint/dynamicData"
+	vehiclesContext "github.com/otwartytransport/otwartytransport-api/internal/endpoint/vehicles/context"
 	"github.com/otwartytransport/otwartytransport-api/internal/middleware/recover"
 
 	_ "github.com/otwartytransport/otwartytransport-api/docs"
@@ -33,7 +33,7 @@ func NewServer() *fiber.App {
 	app.Use(favicon.New(favicon.Config{
 		File: "./favicon.ico",
 	}))
-	app.Use(dynamicData.LoadQuadtreeToContext)
+	app.Use(vehiclesContext.LoadQuadtreeToContext)
 
 	app.Get("/swagger/*", swagger.HandlerDefault)
 

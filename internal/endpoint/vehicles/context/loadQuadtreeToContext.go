@@ -1,4 +1,4 @@
-package dynamicData
+package context
 
 import (
 	"encoding/json"
